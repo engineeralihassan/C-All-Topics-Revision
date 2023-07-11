@@ -3688,21 +3688,72 @@ namespace _15_Extensions_Methods
     }
 }
 /////////////////  Test extension methods 
-namespace _15_Extensions_Methods
-{
-    class TestExtensionsMethods
-    {
-        static void Main()
-        {
-            Program p = new Program();
-            p.Func3(4);
-            int i = 20;
-            bool result = i.IsGreaterthen(10);
-            Console.WriteLine(result);
-            p.Func2();
 
+////////////////////////////////////////////////////////////////////////////////////////
+/// Structures in c#
+/// ///////////////////////////////////////////////////////////////////////////////////
+namespace _16_Structures
+{
+    struct Program
+    { 
+        int a;
+        public Program(int i)
+        {
+            this.a = i;
+            Console.WriteLine("Structure in structs" + a);
+        }
+
+        public void func1()
+        {
+            Console.WriteLine("This is function one");
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("structures in c#");
+            Program p = new Program(12);
+            // also make the object with out new keyword
+            Program p2;
+            p2.a = 12;
+
+            p.func1();
+            p2.func1();
+
+        }
+    }
+
+    interface myinterface
+    {
+        void f();
+    }
+    struct mystrct : myinterface
+    {
+        public void f()
+        {
+            Console.WriteLine("This is the interface" +
+                " methods implemented in struct");
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/// Guide
+/// /////////////////////////////////////////////////////////////////////////////////////////////
+namespace _19_Guide
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Globally unique identifier");
+            Guid g = Guid.NewGuid();
+            //Console.WriteLine(g.ToString().
+            //    Replace("-", string.Empty));
+            // Console.WriteLine(g.ToString("N"));
+            Console.WriteLine(g.ToString("N").Substring(0, 15));
+            Console.WriteLine(g);
 
         }
     }
 }
+
 
