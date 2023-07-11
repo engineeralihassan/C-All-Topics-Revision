@@ -3139,7 +3139,7 @@
 //            Console.WriteLine("All about Generics collections ");
 //            /*///////////////////////////////////
 //            List<int> li = new List<int>();
-          
+
 //            li.Add(13456);
 //            li.Add(12456);
 //            li.Add(12);
@@ -3191,7 +3191,7 @@
 //            string c22 = l2.FindLast(em => em == "halal hassan");
 //            Console.WriteLine("Hello " + c22);
 //            Console.WriteLine( l2.FindIndex(e => e == "Ali Hassan"));
-            
+
 
 
 
@@ -3265,7 +3265,7 @@
 //                Console.WriteLine(ex.Message);
 //            }
 //{ }     
-        
+
 //            Console.WriteLine("lest expressions");
 //            Console.WriteLine("lest expressions");
 //            Console.WriteLine("lest expressions");
@@ -3393,4 +3393,316 @@
 //        }
 //    }
 //}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+///  Partial classes 
+///  ////////////////////////////////////////////////////////////////////////////////////////
+///   this is the program class in an directory 
+//       class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        Console.WriteLine("Partial Class in c#");
+//        studentPartial obj = new studentPartial();
+//        obj.FirstName = "Ali";
+//        obj.lastName = "Hassan";
+//        obj.getCompleteName();
+
+
+//    }
+//}
+
+////   These are the two classes which on the diffrent directory or in else in the namespace 
+////// we create the parcial methods in this class of program class and used this 
+///// 
+using System.Text;
+///  Partial classes 
+///  ////////////////////////////////////////////////////////////////////////////////////////
+///   this is the program class in an directory 
+/// In C#, partial classes allow you to split the definition of a 
+/// //class into multiple files. This can be useful when working with
+/// large classes or when different developers are working on different
+/// parts of a class simultaneously. 
+/// 
+namespace _12_Parial_Classes
+{
+    public partial class studentPartial
+    {
+        private string _firstName;
+        private string _lastName;
+        public string FirstName
+        {
+            set
+            {
+                this._firstName = value;
+
+            }
+            get
+            {
+                return this._firstName;
+            }
+        }
+        public string lastName
+        {
+            set
+            {
+                this._lastName = value;
+
+            }
+            get
+            {
+                return this._lastName;
+            }
+        }
+
+    }
+}
+// partial class for the student
+namespace _12_Parial_Classes
+{
+    public partial class studentPartial
+    {
+        public void getCompleteName()
+        {
+            Console.WriteLine("The full name is :  {0} {1}", this._firstName, this._lastName);
+        }
+    }
+}
+////// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Params in c#
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+//public static int Sum(params int[] numbers)
+//{
+//    int sum = 0;
+//    foreach (int num in numbers)
+//    {
+//        sum += num;
+//    }
+//    return sum;
+//}
+
+//public static void Main(string[] args)
+//{
+//    int result1 = Sum(1, 2, 3);       // Calling Sum with three arguments
+//    int result2 = Sum(4, 5, 6, 7);    // Calling Sum with four arguments
+
+//    Console.WriteLine(result1);      // Output: 6 (1 + 2 + 3)
+//    Console.WriteLine(result2);      // Output: 22 (4 + 5 + 6 + 7)
+//}
+///////////////////////////////////////////////////////////////////////////////////////////////
+/// Threads in c#
+/// //////////////////////////////////////////////////////////////////////////////////////////
+//using System;
+//using System.Threading;
+
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // Create and start a new thread
+//        Thread thread = new Thread(CountNumbers);
+//        thread.Start();
+
+//        // Do some work in the main thread
+//        for (int i = 1; i <= 5; i++)
+//        {
+//            Console.WriteLine("Main thread: " + i);
+//            Thread.Sleep(1000); // Pause for 1 second
+//        }
+
+//        // Wait for the other thread to complete
+//        thread.Join();
+
+//        Console.WriteLine("Main thread finished.");
+//    }
+
+//    static void CountNumbers()
+//    {
+//        for (int i = 1; i <= 5; i++)
+//        {
+//            Console.WriteLine("Secondary thread: " + i);
+//            Thread.Sleep(2000); // Pause for 2 seconds
+//        }
+
+//        Console.WriteLine("Secondary thread finished.");
+//    }
+//}
+
+//Example 2
+//namespace _14_Threads
+//{
+//    public class Program
+//    {
+//        public static void func1()
+//        {
+//            for (int i = 1; i < 50; i++)
+//            {
+//                Console.WriteLine("Func1 calls" + i);
+//            }
+//        }
+//        //
+//        public static void func2()
+//        {
+//            for (int i = 1; i < 50; i++)
+//            {
+//                Console.WriteLine("Func12 calls" + i);
+//                if (i == 25)
+//                {
+//                    Console.WriteLine("thread is on sleep");
+//                    Thread.Sleep(8000);
+//                }
+//            }
+//        }
+//        //
+//        public static void func3()
+//        {
+//            for (int i = 1; i < 50; i++)
+//            {
+//                Console.WriteLine("Func3 calls" + i);
+//            }
+//        }
+//        static void Main(string[] args)
+//        {
+
+//            Console.WriteLine("Multi threading in c#");
+//            /*
+//            Thread t = Thread.CurrentThread;
+//            t.Name = "Main Thread";
+
+//            Console.WriteLine("Current executing Thread is {0}",t.Name);
+//            */
+//            Thread t1 = new Thread(func1);
+//            Thread t2 = new Thread(func2);
+//            Thread t3 = new Thread(func3);
+//            t1.Start();
+//            t2.Start();
+//            t3.Start();
+//            //Program.func1();
+//            //Program.func2(); 
+//            //Program.func3();
+
+//        }
+//    }
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/// String builders 
+/// /////////////////////////////////////////////////////////////////////////////////////////////
+//namespace _14String_and_StringBuilders
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.WriteLine("String and String Builders");
+/*
+// Normal string 
+string s = "Ali";
+Stopwatch sw = new Stopwatch();
+sw.Start();
+for (int i = 0; i < 100000; i++)
+{
+    s=s+i;
+}
+sw.Stop();
+*/
+// strings are the value based and strings are immutable
+// string builder
+/*
+StringBuilder sb = new StringBuilder("Hello");
+Stopwatch sw1 = new Stopwatch();
+sw1.Start();
+for (int i=0; i<100000; i++)
+{
+    sb.Append(i);
+}
+sw1.Stop();
+Console.WriteLine("Time taken by string{0}",sw.ElapsedMilliseconds);
+Console.WriteLine("Time taken by stringBuilder{0}", sw1.ElapsedMilliseconds);
+*/
+//            StringBuilder sb = new StringBuilder("Hello");
+//            sb.Append("Ali");
+//            sb.AppendLine("Hassan");
+//            sb.Append("Akram");
+//            sb.AppendFormat("{0:C}", 23);
+//            sb.AppendFormat("{0:N}", 23);
+//            sb.AppendFormat("{0:X}", 23);
+//            Console.WriteLine(sb);
+//            sb.Insert(4, "MR");
+//            sb.Remove(4, 5);
+//            sb.Replace("Hello", "Hy");
+//            Console.WriteLine(sb);
+
+//        }
+//    }
+//}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/// Extension methods 
+/// //////////////////////////////////////////////////////////////////////////////////////////////
+
+//In C#, extension methods allow you to add new
+//methods to existing types without modifying their original source code. 
+namespace _15_Extensions_Methods
+{          // Extensions methods in c#
+           // add some methods in the class structs interfaces but in the without 
+           //      // modify deriving  recompiling class an others 
+
+    class Program
+    {
+        public void Func1()
+        {
+            Console.WriteLine("this is the functions 1");
+        }
+        public void Func2()
+        {
+            Console.WriteLine("this is the functions 2");
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Extensions Methods");
+        }
+        /// /// // /////////////////////////////////////////////////////////////////////
+    }
+}
+/////////////// other class 
+///
+namespace _15_Extensions_Methods
+{
+
+    static class My_staticClass
+    {
+        public static void Func3(this Program p, int i)
+        {
+            Console.WriteLine("This is function  3");
+
+        }
+        public static bool IsGreaterthen(this int i, int value)
+        {
+            return i > value;
+
+        }
+
+        public static void Func2(this Program p)
+        {
+            Console.WriteLine("This is second function");
+
+        }
+    }
+}
+/////////////////  Test extension methods 
+namespace _15_Extensions_Methods
+{
+    class TestExtensionsMethods
+    {
+        static void Main()
+        {
+            Program p = new Program();
+            p.Func3(4);
+            int i = 20;
+            bool result = i.IsGreaterthen(10);
+            Console.WriteLine(result);
+            p.Func2();
+
+
+        }
+    }
+}
 
