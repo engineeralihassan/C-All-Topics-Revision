@@ -742,15 +742,15 @@
 ////};
 
 
-////int[,] md_arr =
-////{
-////    {1,2,3,4,5,6 },
-////    {2,3,4,5,6,7 },
-////    {8,6,5,4,3,2 },
-////};
-////Console.WriteLine(md_arr.GetLength(0));//rows
-////Console.WriteLine(md_arr.GetLength(1));//colums
-////Console.WriteLine(md_arr.Rank);
+int[,] md_arr =
+{
+   {1,2,3,4,5,6 },
+   {2,3,4,5,6,7 },
+   {8,6,5,4,3,2 },
+};
+Console.WriteLine(md_arr.GetLength(0));//rows
+Console.WriteLine(md_arr.GetLength(1));//colums
+Console.WriteLine(md_arr.Rank);
 
 ////// for loop at nested arrays
 ////for (int i = 0; i < md_arr.GetLength(0); i++)
@@ -2309,7 +2309,7 @@
 ////    }
 ////*/
 ////    /////////////////////////////////////////////////
-////    ///  Indexers in c3
+////    ///  Indexers in c#
 ////    ///  
 
 ////    class Employ
@@ -3415,7 +3415,7 @@
 ////   These are the two classes which on the diffrent directory or in else in the namespace 
 ////// we create the parcial methods in this class of program class and used this 
 ///// 
-using System.Text;
+//using System.Text;
 ///  Partial classes 
 ///  ////////////////////////////////////////////////////////////////////////////////////////
 ///   this is the program class in an directory 
@@ -3424,50 +3424,50 @@ using System.Text;
 /// large classes or when different developers are working on different
 /// parts of a class simultaneously. 
 /// 
-namespace _12_Parial_Classes
-{
-    public partial class studentPartial
-    {
-        private string _firstName;
-        private string _lastName;
-        public string FirstName
-        {
-            set
-            {
-                this._firstName = value;
+// namespace _12_Parial_Classes
+// {
+//     public partial class studentPartial
+//     {
+//         private string _firstName;
+//         private string _lastName;
+//         public string FirstName
+//         {
+//             set
+//             {
+//                 this._firstName = value;
 
-            }
-            get
-            {
-                return this._firstName;
-            }
-        }
-        public string lastName
-        {
-            set
-            {
-                this._lastName = value;
+//             }
+//             get
+//             {
+//                 return this._firstName;
+//             }
+//         }
+//         public string lastName
+//         {
+//             set
+//             {
+//                 this._lastName = value;
 
-            }
-            get
-            {
-                return this._lastName;
-            }
-        }
+//             }
+//             get
+//             {
+//                 return this._lastName;
+//             }
+//         }
 
-    }
-}
-// partial class for the student
-namespace _12_Parial_Classes
-{
-    public partial class studentPartial
-    {
-        public void getCompleteName()
-        {
-            Console.WriteLine("The full name is :  {0} {1}", this._firstName, this._lastName);
-        }
-    }
-}
+//     }
+// }
+// // partial class for the student
+// namespace _12_Parial_Classes
+// {
+//     public partial class studentPartial
+//     {
+//         public void getCompleteName()
+//         {
+//             Console.WriteLine("The full name is :  {0} {1}", this._firstName, this._lastName);
+//         }
+//     }
+// }
 ////// /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// Params in c#
 /// //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3640,101 +3640,101 @@ Console.WriteLine("Time taken by stringBuilder{0}", sw1.ElapsedMilliseconds);
 
 //In C#, extension methods allow you to add new
 //methods to existing types without modifying their original source code. 
-namespace _15_Extensions_Methods
-{          // Extensions methods in c#
-           // add some methods in the class structs interfaces but in the without 
-           //      // modify deriving  recompiling class an others 
+// namespace _15_Extensions_Methods
+// {          // Extensions methods in c#
+//            // add some methods in the class structs interfaces but in the without 
+//            //      // modify deriving  recompiling class an others 
 
-    class Program
-    {
-        public void Func1()
-        {
-            Console.WriteLine("this is the functions 1");
-        }
-        public void Func2()
-        {
-            Console.WriteLine("this is the functions 2");
-        }
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Extensions Methods");
-        }
-        /// /// // /////////////////////////////////////////////////////////////////////
-    }
-}
+//     class Program
+//     {
+//         public void Func1()
+//         {
+//             Console.WriteLine("this is the functions 1");
+//         }
+//         public void Func2()
+//         {
+//             Console.WriteLine("this is the functions 2");
+//         }
+//         static void Main(string[] args)
+//         {
+//             Console.WriteLine("Extensions Methods");
+//         }
+//         /// /// // /////////////////////////////////////////////////////////////////////
+//     }
+// }
 /////////////// other class 
 ///
-namespace _15_Extensions_Methods
-{
+// namespace _15_Extensions_Methods
+// {
 
-    static class My_staticClass
-    {
-        public static void Func3(this Program p, int i)
-        {
-            Console.WriteLine("This is function  3");
+//     static class My_staticClass
+//     {
+//         public static void Func3(this Program p, int i)
+//         {
+//             Console.WriteLine("This is function  3");
 
-        }
-        public static bool IsGreaterthen(this int i, int value)
-        {
-            return i > value;
+//         }
+//         public static bool IsGreaterthen(this int i, int value)
+//         {
+//             return i > value;
 
-        }
+//         }
 
-        public static void Func2(this Program p)
-        {
-            Console.WriteLine("This is second function");
+//         public static void Func2(this Program p)
+//         {
+//             Console.WriteLine("This is second function");
 
-        }
-    }
-}
+//         }
+//     }
+// }
 /////////////////  Test extension methods 
 
 ////////////////////////////////////////////////////////////////////////////////////////
 /// Structures in c#
 /// ///////////////////////////////////////////////////////////////////////////////////
-namespace _16_Structures
-{
-    struct Program
-    { 
-        int a;
-        public Program(int i)
-        {
-            this.a = i;
-            Console.WriteLine("Structure in structs" + a);
-        }
+// namespace _16_Structures
+// {
+//     struct Program
+//     { 
+//         int a;
+//         public Program(int i)
+//         {
+//             this.a = i;
+//             Console.WriteLine("Structure in structs" + a);
+//         }
 
-        public void func1()
-        {
-            Console.WriteLine("This is function one");
+//         public void func1()
+//         {
+//             Console.WriteLine("This is function one");
 
-        }
-        static void Main(string[] args)
-        {
-            Console.WriteLine("structures in c#");
-            Program p = new Program(12);
-            // also make the object with out new keyword
-            Program p2;
-            p2.a = 12;
+//         }
+//         static void Main(string[] args)
+//         {
+//             Console.WriteLine("structures in c#");
+//             Program p = new Program(12);
+//             // also make the object with out new keyword
+//             Program p2;
+//             p2.a = 12;
 
-            p.func1();
-            p2.func1();
+//             p.func1();
+//             p2.func1();
 
-        }
-    }
+//         }
+//     }
 
-    interface myinterface
-    {
-        void f();
-    }
-    struct mystrct : myinterface
-    {
-        public void f()
-        {
-            Console.WriteLine("This is the interface" +
-                " methods implemented in struct");
-        }
-    }
-}
+//     interface myinterface
+//     {
+//         void f();
+//     }
+//     struct mystrct : myinterface
+//     {
+//         public void f()
+//         {
+//             Console.WriteLine("This is the interface" +
+//                 " methods implemented in struct");
+//         }
+//     }
+// }
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /// Guide
 /// /////////////////////////////////////////////////////////////////////////////////////////////
